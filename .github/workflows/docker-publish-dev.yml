@@ -1,6 +1,8 @@
 name: Docker publish Dev
 
 on:
+  repository_dispatch:
+  workflow_dispatch:
   push:
     branches: [ dev]
 
@@ -32,7 +34,7 @@ jobs:
     needs: test
 
     runs-on: ubuntu-latest
-    if: github.event_name == 'push'
+#    if: github.event_name == 'push'
 
     permissions:
       contents: read
